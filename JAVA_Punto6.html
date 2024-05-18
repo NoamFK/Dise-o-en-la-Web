@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reloj Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* styles.css */
+        .clock {
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+        /* styles.css */
+        body {
+            display: flex;
+            justify-content: center; /* Centrado horizontal */
+            align-items: center; /* Centrado vertical */
+            height: 100vh; /* Altura de la ventana completa */
+            margin: 0;
+            background-color: #0205b8;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <span id="hours"></span> :
+        <span id="minutes"></span> :
+        <span id="seconds"></span>
+    </div>
+    <script>
+                // script.js
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        // Actualizar el reloj cada segundo
+        setInterval(updateClock, 1000);
+        updateClock(); // Actualizar inmediatamente al cargar la página
+    </script>
+    
+</body>
+</html>
+
+
