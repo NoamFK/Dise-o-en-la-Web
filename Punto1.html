@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trabajo Practico JavaScript</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            margin: 0;
+            flex-direction: column;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <button id="boton">Incrementar Contador</button>
+    <label id="labelIncrementar">----</label>
+    <script>
+        let incremento = 0;
+        //manejador de eventos del boton
+        document.getElementById("boton").addEventListener("click", function(){
+            incremento = incremento + 1;
+        document.getElementById("labelIncrementar").textContent = incremento; // Actualizamos el contenido del label
+        });
+    </script>
+</body>
+</html>

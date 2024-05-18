@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="nuevaTarea" placeholder="Agregar nueva tarea">
+    <button onclick="agregarTarea()">Agregar</button>
+    <ul id="listaTareas"></ul>
+
+    <script>
+        function agregarTarea() {
+            const nuevaTarea = document.getElementById("nuevaTarea").value;
+            if (nuevaTarea.trim() !== "") {
+                const listaTareas = document.getElementById("listaTareas");
+                const tareaElemento = document.createElement("li");
+                tareaElemento.textContent = nuevaTarea;
+                listaTareas.appendChild(tareaElemento);
+
+                // Agregar botón para eliminar la tarea
+                const botonEliminar = document.createElement("button");
+                botonEliminar.textContent = "Eliminar";
+                botonEliminar.onclick = function() {
+                    listaTareas.removeChild(tareaElemento);
+                };
+                tareaElemento.appendChild(botonEliminar);
+
+                // Limpiar el campo de texto
+                document.getElementById("nuevaTarea").value = "";
+            }
+        }
+    </script>
+</body>
+</html>

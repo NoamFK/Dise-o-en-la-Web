@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>DIARIOS</h1>
+</head>
+<body>
+    <ol>
+        <li><label id="labelEspaña">España</label></li>
+        <li><label id="labelEEUU">EE.UU</label></li>
+        <li><label id="labelArgentina">Argentina</label></li>
+        <li><label id="labelBrasil">Brasil</label></li>
+    </ol>
+    <script>
+        document.getElementById("labelArgentina").addEventListener("click", function(){
+            document.getElementById("labelArgentina").style.color = "blue"; 
+            document.getElementById("labelArgentina").style.fontSize = 30 + "px";
+        });
+        document.getElementById("labelBrasil").addEventListener("click", function(){
+            document.getElementById("labelBrasil").style.color = "green"; 
+            document.getElementById("labelBrasil").style.fontSize = 10 + "px";
+        });
+        document.getElementById("labelEEUU").addEventListener("click", function(){
+            document.getElementById("labelEEUU").style.color = "orange"; 
+        });
+        document.getElementById("labelEspaña").addEventListener("click", function(){ 
+            document.getElementById("labelEspaña").style.fontSize = 20 + "px";
+        });
+    </script>
+</body>
+</html>

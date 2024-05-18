@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Galería de Imágenes</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: 300px;
+            display: none; /* Ocultamos todas las imágenes al principio */
+            margin: 0 auto;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            margin: 0;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>Galería de Imágenes</h1>
+    <div id="gallery">
+        <img src="https://ethic.es/wp-content/uploads/2023/03/imagen.jpg" alt="Imagen 1" style="display: block;"> 
+        <img src="https://img.freepik.com/fotos-premium/imagen-fondo_910766-187.jpg" alt="Imagen 2">
+        <img src="https://img.freepik.com/foto-gratis/colores-arremolinados-interactuan-danza-fluida-sobre-lienzo-que-muestra-tonos-vibrantes-patrones-dinamicos-que-capturan-caos-belleza-arte-abstracto_157027-2892.jpg" alt="Imagen 3">
+    </div>
+    <button onclick="mostrarAnterior()">Anterior</button>
+    <button onclick="mostrarSiguiente()">Siguiente</button>
+
+    <script>
+        const imagenes = document.querySelectorAll("#gallery img");
+        let indiceActual = 0;
+
+        function mostrarAnterior() {
+            imagenes[indiceActual].style.display = "none";
+            indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+            imagenes[indiceActual].style.display = "block";
+        }
+
+        function mostrarSiguiente() {
+            imagenes[indiceActual].style.display = "none";
+            indiceActual = (indiceActual + 1) % imagenes.length;
+            imagenes[indiceActual].style.display = "block";
+        }
+    </script>
+</body>
+</html>
+
